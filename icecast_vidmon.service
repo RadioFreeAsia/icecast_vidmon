@@ -1,0 +1,13 @@
+[Unit]
+Description=Video monitoring stream encoder to Icecast
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/icecast_vidmon.sh
+PrivateTmp=true
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
