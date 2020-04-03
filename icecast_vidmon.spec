@@ -40,7 +40,9 @@ fi
 %{_bindir}/icecast_vidmon.sh
 /lib/systemd/system/icecast_vidmon.service
 %doc ChangeLog
+%doc COPYING
 %doc icecast_vidmon-sample.conf
+%doc README
 
 %changelog
 * Fri Apr  3 2020 Fred Gleason <fredg@paravelsystems.com> -
