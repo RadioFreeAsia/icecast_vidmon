@@ -25,10 +25,10 @@
 ffmpeg \
   -f decklink -i "$DECKLINK_NAME" \
   -vf "scale=$VIDEO_SIZE" \
-  -f webm -cluster_size_limit 2M -cluster_time_limit 1100 -content_type video/webm \
+  -f webm -cluster_size_limit 0 -cluster_time_limit 1100 -content_type video/webm \
   -c:a libvorbis -qscale:a 1 \
   -c:v libvpx -b:v $VIDEO_BITRATE -g $VIDEO_FRAMERATE -threads $VIDEO_THREADS \
-  icecast://$ICECAST_USERNAME:$ICECAST_PASSWORD@$ICECAST_SERVER:$ICECAST_PORT$ICECAST_MOUNTPOINT 2> /dev/null
+  icecast://$ICECAST_USERNAME:$ICECAST_PASSWORD@$ICECAST_SERVER:$ICECAST_PORT$ICECAST_MOUNTPOINT
 
 #
 # Show Supported Formats
