@@ -34,11 +34,12 @@ dist:
 	./make_dist.sh
 
 clean:	
-	rm -f *~ *.rpm *.tar.gz
+	rm -f *~ *.rpm *.spec *.tar.gz
 
 rpm:	dist
 	mkdir -p $(HOME)/rpmbuild/SOURCES
 	cp icecast_vidmon-$(VERSION).tar.gz $(HOME)/rpmbuild/SOURCES/
+	cat icecast_vidmon.spec.in | sed s/@VERSION@/`cat VERSION`/ > icecast_vidmon.spec
 	rpmbuild -ba --target noarch-redhat-linux icecast_vidmon.spec
 	mv $(HOME)/rpmbuild/RPMS/noarch/icecast_vidmon-*.rpm .
 	mv $(HOME)/rpmbuild/SRPMS/icecast_vidmon-*.src.rpm .

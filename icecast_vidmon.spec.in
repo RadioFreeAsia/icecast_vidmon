@@ -1,6 +1,6 @@
 Summary: Send a WebM live stream to Icecast
 Name: icecast_vidmon
-Version: 0.1.0
+Version: @VERSION@
 Release: 1%{?dist}
 License: GPLv2
 Source0: icecast_vidmon-%{version}.tar.gz
