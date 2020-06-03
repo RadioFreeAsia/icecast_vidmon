@@ -28,6 +28,9 @@ ffmpeg \
   -f webm -cluster_size_limit 0 -cluster_time_limit 1100 -content_type video/webm \
   -c:a libvorbis -qscale:a 1 \
   -c:v libvpx -b:v $VIDEO_BITRATE -g $VIDEO_FRAMERATE -threads $VIDEO_THREADS \
+  -ice_name "$ICECAST_STREAM_NAME" \
+  -ice_description "$ICECAST_STREAM_DESCRIPTION" \
+  -ice_genre "$ICECAST_STREAM_GENRE" \
   icecast://$ICECAST_USERNAME:$ICECAST_PASSWORD@$ICECAST_SERVER:$ICECAST_PORT$ICECAST_MOUNTPOINT
 
 #

@@ -11,3 +11,7 @@
 	* Fixed a bug that broke the 'make rpm' target.
 2020-04-04 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.9.1.
+2020-06-03 Fred Gleason <fredg@paravelsystems.com>
+	* Added support for 'ICECAST_STREAM_DESCRIPTION',
+	'ICECAST_STREAM_GENRE' and 'ICECAST_STREAM_NAME' in
+	icecast_vidmon(5).
